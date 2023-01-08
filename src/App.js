@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [source, setSource] = useState('');
+  const [result, setResult] = useState('');
+
+  function handleClick() {
+    // TODO convert cases
+    setResult('Some result based on the source text');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <textarea value={source} onChange={e => setSource(e.target.value)} />
+      <textarea value={result} onChange={e => setResult(e.target.value)} />
+      <button onClick={handleClick}>Convert</button>
     </div>
   );
 }

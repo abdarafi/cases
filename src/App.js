@@ -5,8 +5,10 @@ function App() {
   const [result, setResult] = useState("");
 
   function handleClick() {
-    // Convert the source text to kebab case
-    const kebab = source.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+    // Replace spaces with hyphens
+    const hyphenated = source.replace(/\s+/g, "-");
+    // Convert the hyphenated string to kebab case
+    const kebab = hyphenated.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
     // Set the result to the kebab case string
     setResult(kebab);
   }

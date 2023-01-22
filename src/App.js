@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [source, setSource] = useState("");
@@ -19,18 +20,17 @@ function App() {
   }
 
   return (
-    <div>
-      <textarea value={source} onChange={(e) => setSource(e.target.value)} />
-      <textarea value={result} onChange={(e) => setResult(e.target.value)} />
-      <select onChange={(e) => setCaseOption(e.target.value)}>
+    <div className="App">
+      <textarea className="input-box" value={source} onChange={(e) => setSource(e.target.value)} />
+      <textarea className="input-box" value={result} onChange={(e) => setResult(e.target.value)} />
+      <select className="select-box" onChange={(e) => setCaseOption(e.target.value)}>
         <option value="kebab">Kebab Case</option>
         <option value="camel">Camel Case</option>
         <option value="snake">Snake Case</option>
       </select>
-      <button onClick={handleClick}>Convert</button>
+      <button className="convert-button" onClick={handleClick}>Convert</button>
     </div>
   );
 }
 
 export default App;
-

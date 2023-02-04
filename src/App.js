@@ -23,6 +23,7 @@ function App() {
 
   function handleResultClick() {
     navigator.clipboard.writeText(result);
+    alert("Copied to clipboard!");
   }
 
   return (

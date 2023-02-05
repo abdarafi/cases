@@ -30,11 +30,13 @@ function App() {
     <div className="App">
       <textarea
         className="input-box"
+        data-gramm="false"
         value={source}
         onChange={(e) => setSource(e.target.value)}
       />
       <textarea
         className="input-box"
+        data-gramm="false"
         value={result}
         onChange={(e) => setResult(e.target.value)}
         onClick={handleResultClick}
